@@ -9,23 +9,24 @@ importers:
   .:
     dependencies:
       astro:
-        specifier: ^5.10.1
-        version: 5.10.1(@types/node@22.15.17)(jiti@2.4.2)(rollup@4.34.9)(typescript@5.5.4)
+        specifier: ^5.11.0
+        version: 5.11.0(@types/node@22.15.17)(jiti@2.4.2)(rollup@4.34.9)(typescript@5.5.4)
       sharp:
         specifier: ^0.34.2
         version: 0.34.2
     devDependencies:
       '@area44/biome-config':
-        specifier: ^2.0.1
-        version: 2.0.1
+        specifier: ^2.2.2
+        version: 2.2.2
       '@biomejs/biome':
         specifier: ^2.0.6
         version: 2.0.6
 
 packages:
 
-  '@area44/biome-config@2.0.1':
-    resolution: {integrity: sha512-OS+DL+Sw4teLAJBPnHTSSnBxcAJZskWULqMTRbhQcinPAMSac8EBojRTybIX0eZGblJ17EOt/qKickjYPn9GDA==}
+  '@area44/biome-config@2.2.2':
+    resolution: {integrity: sha512-aYo4AExsk0cgt9/pJ3Xe+TBGjdwRQAZxtMd9XyXGCrglSj6SKrHHcj/QEzRV+4EGNEOUmg3YjueDZBWQHbXJ8g==}
+    engines: {node: '>=22.17.0'}
 
   '@astrojs/compiler@2.12.2':
     resolution: {integrity: sha512-w2zfvhjNCkNMmMMOn5b0J8+OmUaBL1o40ipMvqcG6NRpdC+lKxmTi48DT8Xw0SzJ3AfmeFLB45zXZXtmbsjcgw==}
@@ -689,8 +690,8 @@ packages:
   array-iterate@2.0.1:
     resolution: {integrity: sha512-I1jXZMjAgCMmxT4qxXfPXa6SthSoE8h6gkSI9BGGNv8mP8G/v0blc+qFnZu6K42vTOiuME596QaLO0TP3Lk0xg==}
 
-  astro@5.10.1:
-    resolution: {integrity: sha512-DJVmt+51jU1xmgmAHCDwuUgcG/5aVFSU+tcX694acAZqPVt8EMUAmUZcJDX36Z7/EztnPph9HR3pm72jS2EgHQ==}
+  astro@5.11.0:
+    resolution: {integrity: sha512-MEICntERthUxJPSSDsDiZuwiCMrsaYy3fnDhp4c6ScUfldCB8RBnB/myYdpTFXpwYBy6SgVsHQ1H4MuuA7ro/Q==}
     engines: {node: 18.20.8 || ^20.3.0 || >=22.0.0, npm: '>=9.6.5', pnpm: '>=7.1.0'}
     hasBin: true
 
@@ -1635,7 +1636,7 @@ packages:
 
 snapshots:
 
-  '@area44/biome-config@2.0.1': {}
+  '@area44/biome-config@2.2.2': {}
 
   '@astrojs/compiler@2.12.2': {}
 
@@ -2136,7 +2137,7 @@ snapshots:
 
   array-iterate@2.0.1: {}
 
-  astro@5.10.1(@types/node@22.15.17)(jiti@2.4.2)(rollup@4.34.9)(typescript@5.5.4):
+  astro@5.11.0(@types/node@22.15.17)(jiti@2.4.2)(rollup@4.34.9)(typescript@5.5.4):
     dependencies:
       '@astrojs/compiler': 2.12.2
       '@astrojs/internal-helpers': 0.6.1
