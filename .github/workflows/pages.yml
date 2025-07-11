@@ -13,21 +13,16 @@ permissions:
 jobs:
   build:
     runs-on: ubuntu-latest
-    outputs:
-      should_deploy: ${{ steps.build.outputs.should_deploy }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
 
       - name: Run build
-        id: build
-        uses: area44/workflows/astro@v2.0.0
-        with:
-          run_deploy: true
+        uses: area44/workflows/astro@v2.0.2
 
   deploy:
     needs: build
-    if: needs.build.outputs.should_deploy == 'true'
+    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     environment:
       name: github-pages
