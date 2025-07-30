@@ -16,11 +16,11 @@
     "check": "biome check --write ."
   },
   "dependencies": {
-    "astro": "^5.12.3",
+    "astro": "^5.12.5",
     "sharp": "^0.34.3"
   },
   "devDependencies": {
     "@area44/biome-config": "^2.2.5",
-    "@biomejs/biome": "^2.1.2"
+    "@biomejs/biome": "^2.1.3"
   }
 }
