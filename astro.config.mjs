@@ -1,6 +1,9 @@
 import { defineConfig } from "astro/config";
 
+const site = process.env.SITE || "localhost://4321";
+const base = process.env.BASE || "/";
+
 export default defineConfig({
-  site: "https://area44.github.io",
-  base: process.env.CI ? "/astro-research-theme/" : undefined,
+  site,
+  base,
 });
