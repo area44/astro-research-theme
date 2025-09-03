@@ -4,12 +4,6 @@ import Section from "@/components/Section.astro";
 import Video from "@/components/Video.astro";
 import BaseLayout from "@/layouts/BaseLayout.astro";
 
-interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
-  banner?: URL | undefined;
-}
-
 // Your configuration options here
 import banner from "@/assets/banner.jpg";
 import downloadThumb from "@/assets/download-thumb.jpg";
@@ -49,12 +43,12 @@ const links = [
 ---
 
 <BaseLayout title={title} description={description}>
-  <div class="n-title">
+  <div>
     <h1>{title}</h1>
   </div>
-  <div class="n-byline">
-    <div class="byline">
-      <ul class="authors">
+  <div>
+    <div>
+      <ul>
         {
           authors.map((author) => (
             <li>
@@ -64,7 +58,7 @@ const links = [
           ))
         }
       </ul>
-      <ul class="authors affiliations">
+      <ul>
         {
           affiliations.map((affiliation) => (
             <li>
@@ -77,8 +71,8 @@ const links = [
     </div>
   </div>
 
-  <div class="n-article">
-    <div class="l-article">
+  <div>
+    <div>
       <Image src={banner} alt="Banner" />
     </div>
 
@@ -95,21 +89,20 @@ const links = [
     </Section>
 
     <Section id="Links">
-      <div class="grid download-section">
-        <div class="download-thumb">
+      <div>
+        <div>
           <a
             href="https://raw.githubusercontent.com/AREA44/astro-research-theme/main/public/pdf-sample.pdf"
           >
             <Image
               src={downloadThumb}
-              class="dropshadow"
               width="300"
               height="400"
               alt="Download Thumb"
             />
           </a>
         </div>
-        <div class="download-links">
+        <div>
           <ul>
             {
               links.map((link) => (
@@ -176,7 +169,7 @@ const links = [
       erat volutpat. Aliquam aliquam dictum nulla, euismod imperdiet diam
       aliquam a. Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus
       varius. Pellentesque in metus id risus interdum viverra id vel urna.
-    </Section>
+    </section>
   </div>
 </BaseLayout>
 
