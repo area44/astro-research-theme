@@ -42,12 +42,12 @@ const links = [
 ---
 
 <BaseLayout title={title} description={description}>
-  <div>
+  <div class="n-title">
     <h1>{title}</h1>
   </div>
-  <div>
-    <div>
-      <ul>
+  <div class="n-byline">
+    <div class="byline">
+      <ul class="authors">
         {
           authors.map((author) => (
             <li>
@@ -57,7 +57,7 @@ const links = [
           ))
         }
       </ul>
-      <ul>
+      <ul class="authors affiliations">
         {
           affiliations.map((affiliation) => (
             <li>
@@ -70,8 +70,8 @@ const links = [
     </div>
   </div>
 
-  <div>
-    <div>
+  <div class="n-article">
+    <div class="l-article">
       <Image src={banner} alt="Banner" />
     </div>
 
@@ -88,20 +88,21 @@ const links = [
     </Section>
 
     <Section id="Links">
-      <div>
-        <div>
+      <div class="grid download-section">
+        <div class="download-thumb">
           <a
             href="https://raw.githubusercontent.com/AREA44/astro-research-theme/main/public/pdf-sample.pdf"
           >
             <Image
               src={downloadThumb}
+              class="dropshadow"
               width="300"
               height="400"
               alt="Download Thumb"
             />
           </a>
         </div>
-        <div>
+        <div class="download-links">
           <ul>
             {
               links.map((link) => (
@@ -168,7 +169,7 @@ const links = [
       erat volutpat. Aliquam aliquam dictum nulla, euismod imperdiet diam
       aliquam a. Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus
       varius. Pellentesque in metus id risus interdum viverra id vel urna.
-    </section>
+    </Section>
   </div>
 </BaseLayout>
 
