@@ -1,0 +1,92 @@
+---
+import { Image } from "astro:assets";
+import fallbackThumb from "@/assets/banner.jpg";
+
+interface Author {
+  id: number | string;
+  name: string;
+}
+
+interface Affiliation {
+  id: number | string;
+  name: string;
+}
+
+interface Link {
+  id: string;
+  url: string;
+}
+
+interface Props {
+  title: string;
+  authors: Author[];
+  affiliations: Affiliation[];
+  thumbnail: string;
+  links: Link[];
+}
+
+const { title, authors, affiliations, thumbnail, links } = Astro.props as Props;
+const imageSrc = thumbnail ?? fallbackThumb;
+---
+
+<div class="n-title">
+  <h1>{title}</h1>
+</div>
+
+<div class="n-byline">
+  <div class="byline">
+    <ul class="authors">
+      {
+        authors.map((author) => (
+          <li>
+            {author.name}
+            <sup>{author.id}</sup>
+          </li>
+        ))
+      }
+    </ul>
+
+    <ul class="authors affiliations">
+      {
+        affiliations.map((affiliation) => (
+          <li>
+            <sup>{affiliation.id}</sup>
+            {affiliation.name}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<div class="n-article">
+  <div class="grid download-section">
+    <div class="download-thumb">
+      <a
+        href="https://raw.githubusercontent.com/AREA44/astro-research-theme/main/public/pdf-sample.pdf"
+      >
+        <Image
+          src={imageSrc}
+          class="dropshadow"
+          width={300}
+          height={400}
+          alt="Download preview"
+        />
+      </a>
+    </div>
+
+    <div class="download-links">
+      <ul>
+        {
+          links.map((link) => (
+            <li>
+              <a href={link.url} rel="noopener noreferrer" target="_blank">
+                {link.id}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </div>
+</div>

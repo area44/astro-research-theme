@@ -1,0 +1,42 @@
+---
+layout: "@/layouts/BaseLayout.astro"
+title: Astro Research Theme
+description: Simple Astro Theme for Research
+banner: "@/assets/banner.jpg"
+thumbnail: "@/assets/download-thumb.jpg"
+---
+import Header from "@/components/Header.astro";
+
+<Header
+  title={frontmatter.title}
+  authors={[
+    {
+      id: "1",
+      name: "Adam Allen",
+    },
+    {
+      id: "1",
+      name: "Peter fadler",
+    },
+  ]}
+  affiliations={[
+    {
+      id: "1",
+      name: "AREA44",
+    },
+  ]}
+  links={[
+    {
+      id: "Paper PDF",
+      url: "https://raw.githubusercontent.com/AREA44/astro-research-theme/main/public/pdf-sample.pdf",
+    },
+    {
+      id: "Astro Banner",
+      url: "https://raw.githubusercontent.com/AREA44/astro-research-theme/main/public/banner.jpg",
+    },
+    {
+      id: "Code release on GitHub",
+      url: "https://github.com/AREA44/astro-research-theme",
+    },
+  ]}
+/>
