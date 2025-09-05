@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import fallbackThumb from "@/assets/banner.jpg";
+import banner from "@/assets/banner.jpg";
 
 interface Author {
   id: number | string;
@@ -12,21 +12,14 @@ interface Affiliation {
   name: string;
 }
 
-interface Link {
-  id: string;
-  url: string;
-}
-
 interface Props {
   title: string;
   authors: Author[];
   affiliations: Affiliation[];
   thumbnail: string;
-  links: Link[];
 }
 
-const { title, authors, affiliations, thumbnail, links } = Astro.props as Props;
-const imageSrc = thumbnail ?? fallbackThumb;
+const { title, authors, affiliations } = Astro.props as Props;
 ---
 
 <div class="n-title">
@@ -60,29 +53,12 @@ const imageSrc = thumbnail ?? fallbackThumb;
 </div>
 
 <div class="n-article">
-  <div class="grid download-section">
-    <div class="download-thumb">
-      <Image
-        src={imageSrc}
-        class="dropshadow"
-        width={450}
-        height={235}
-        alt="Download preview"
-      />
-    </div>
-
-    <div class="download-links">
-      <ul>
-        {
-          links.map((link) => (
-            <li>
-              <a href={link.url} rel="noopener noreferrer" target="_blank">
-                {link.id}
-              </a>
-            </li>
-          ))
-        }
-      </ul>
-    </div>
+  <div class="l-article">
+    <Image src={banner} alt="Banner" />
   </div>
+
+  <h2>Abstract</h2>
+  <p>
+    <slot />
+  </p>
 </div>

@@ -2,10 +2,9 @@
 layout: "@/layouts/BaseLayout.astro"
 title: Astro Research Theme
 description: Simple Astro Theme for Research
-banner: "@/assets/banner.jpg"
-thumbnail: "@/assets/download-thumb.jpg"
 ---
 import Header from "@/components/Header.astro";
+import Links from "@/components/Links.astro";
 
 <Header
   title={frontmatter.title}
@@ -25,6 +24,11 @@ import Header from "@/components/Header.astro";
       name: "AREA44",
     },
   ]}
+>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis congue, dui sit amet commodo tempus, lorem ante tincidunt neque, vitae vulputate augue turpis vel nisl. Sed facilisis faucibus laoreet. Proin convallis, enim at iaculis facilisis, lorem sapien ullamcorper magna, id feugiat diam risus sit amet turpis. Vestibulum bibendum venenatis justo nec pharetra. Vestibulum interdum blandit lectus, ut mollis urna ullamcorper id. Aliquam erat volutpat. Aliquam aliquam dictum nulla, euismod imperdiet diam aliquam a. Mauris pharetra nunc nisi. Nunc sed dolor suscipit metus tempus varius. Pellentesque in metus id risus interdum viverra id vel urna.
+</Header>
+
+<Links 
   links={[
     {
       id: "Paper PDF",
