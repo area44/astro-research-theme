@@ -1,7 +1,7 @@
 # Astro Research Theme
 
 [![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build)
-[![Deploy Astro site to Pages](https://github.com/AREA44/astro-research-theme/actions/workflows/pages.yml/badge.svg)](https://github.com/AREA44/astro-research-theme/actions/workflows/pages.yml)
+[![Deploy Astro site to Pages](https://github.com/area44/astro-research-theme/actions/workflows/pages.yml/badge.svg)](https://github.com/area44/astro-research-theme/actions/workflows/pages.yml)
 
 A minimal and elegant Astro theme for research projects.  
 
