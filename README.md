@@ -3,23 +3,26 @@
 [![Built with Astro](https://astro.badg.es/v2/built-with-astro/tiny.svg)](https://astro.build)
 [![Deploy Astro site to Pages](https://github.com/AREA44/astro-research-theme/actions/workflows/pages.yml/badge.svg)](https://github.com/AREA44/astro-research-theme/actions/workflows/pages.yml)
 
-Preview on [GitHub Pages](https://area44.github.io/astro-research-theme).
+A minimal and elegant Astro theme for research projects.  
 
-## Runing locally
+**[Live Preview on GitHub Pages](https://area44.github.io/astro-research-theme).**
 
-| Command        | Action                                       |
-| :------------- | :------------------------------------------- |
-| `pnpm install` | Installs dependencies                        |
-| `pnpm dev`     | Starts local dev server at `localhost:4321`  |
-| `pnpm build`   | Build your production site to `./dist/`      |
-| `pnpm preview` | Preview your build locally, before deploying |
-| `pnpm format ` | Format code with Prettier                    |
+## Getting Started
 
-You can config options in `index.astro`.
+Clone the repository and install dependencies:
+
+```bash
+git clone https://github.com/area44/astro-research-theme
+cd astro-research-theme
+pnpm install
+pnpm dev
+```
 
 ## Credits
 
-This theme is based off of the [StyleGAN3 style](https://nvlabs.github.io/stylegan3).
+This theme draws inspiration from:
+- [StyleGAN3 style](https://nvlabs.github.io/stylegan3)
+- [Research project page template](https://github.com/RomanHauksson/academic-project-astro-template)
 
 ## License
 
