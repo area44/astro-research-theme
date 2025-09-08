@@ -1,5 +1,5 @@
 ---
-import BaseHead from "@/components/BaseHead.astro";
+import Head from "@/components/Head.astro";
 
 interface Props {
   frontmatter: {
@@ -15,7 +15,7 @@ const { title, description, ogImage } = Astro.props.frontmatter;
 <!doctype html>
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} ogImage={ogImage} />
+    <Head title={title} description={description} ogImage={ogImage} />
   </head>
   <body>
     <div class="n-article">
