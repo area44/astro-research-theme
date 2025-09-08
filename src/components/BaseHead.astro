@@ -7,10 +7,9 @@ interface Props {
   ogImage?: string | URL;
 }
 
-const siteUrl = new URL(Astro.site);
+const siteUrl = new URL(Astro.site ?? "http://localhost:3000/");
 const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
 
-// Normalize props with fallbacks
 const {
   title = "Default Site Title",
   description = "Default description for SEO.",

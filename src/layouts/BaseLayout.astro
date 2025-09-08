@@ -2,12 +2,14 @@
 import BaseHead from "@/components/BaseHead.astro";
 
 interface Props {
-  title?: string;
-  description?: string;
-  ogImage?: URL;
+  frontmatter: {
+    title?: string;
+    description?: string;
+    ogImage?: string;
+  };
 }
 
-const { title, description, ogImage } = Astro.props;
+const { title, description, ogImage } = Astro.props.frontmatter;
 ---
 
 <!doctype html>

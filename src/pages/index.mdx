@@ -1,7 +1,7 @@
 ---
 layout: "@/layouts/BaseLayout.astro"
 title: Astro Research Theme
-description: A minimal and elegant Astro theme for research projects and paper pages
+description: A minimal and elegant Astro theme for research projects, papers, and presentations
 ---
 import Header from "@/components/Header.astro";
 import Links from "@/components/Links.astro";
@@ -12,26 +12,17 @@ import LaTeX from "@/components/LaTeX.astro";
 <Header
   title={frontmatter.title}
   authors={[
-    {
-      id: "1",
-      name: "Adam Allen",
-    },
-    {
-      id: "2",
-      name: "Peter Fadler",
-    },
+    { id: "1", name: "Adam Allen" },
+    { id: "2", name: "Peter Fadler" },
   ]}
   affiliations={[
-    {
-      id: "1",
-      name: "AREA44",
-    },
+    { id: "1", name: "AREA44" },
   ]}
 >
   This is a live demo of a research project template built with **Astro**.  
-  You can use it to create a clean, customizable page for your academic paper, project, or presentation.  
+  It provides a clean, customizable framework for academic papers, projects, or presentations.  
 
-  Content is written in **MDX**, which means you can mix markdown formatting — like **bold**, *italics*, and ~strikethrough~ — with Astro components for a flexible writing experience.
+  Content is written in **MDX**, letting you combine markdown formatting — such as **bold**, *italics*, and ~strikethrough~ — with Astro components for a flexible authoring experience.
 </Header>
 
 <Links
@@ -51,38 +42,42 @@ import LaTeX from "@/components/LaTeX.astro";
   ]}
 />
 
-## Heading levels
+## Headings
 
-Use headings to divide your content into sections.
+Use headings to structure your content into clear, readable sections.
 
 ### Heading 3
 
-Go down a level to heading 3...
+This is an example of a level-three heading.
 
 #### Heading 4
 
-...and down again to heading 4.
+And here is a level-four heading.
 
 ## LaTeX
 
-You can also add LaTeX formulas, rendered during the build process using [KaTeX](https://katex.org/) so they're quick to load for visitors of your project page. You can write them inline, like this: <LaTeX inline formula="a^2 + b^2 = c^2" />. Or, you can write them as a block:
+Mathematical notation is supported via [KaTeX](https://katex.org/), rendered at build time for fast loading.  
 
-<LaTeX formula="\int_a^b f(x) dx" />
+Inline example: <LaTeX inline formula="a^2 + b^2 = c^2" />  
+
+Block example:
+
+<LaTeX formula="\int_a^b f(x)\, dx" />
 
 ## Tables
 
-You can add simple tables using [GitHub Flavored Markdown syntax](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables):
+You can create tables using [GitHub Flavored Markdown](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables):
 
-| Model | Accuracy | F1 score | Training time (hours) |
-| :--- | :---: | :---: | :---: |
-| BERT-base | 0.89 | 0.87 | 4.5 |
-| RoBERTa-large | 0.92 | 0.91 | 7.2 |
-| DistilBERT | 0.86 | 0.84 | 2.1 |
-| XLNet | 0.90 | 0.89 | 6.8 |
+| Model         | Accuracy | F1 score | Training time (hours) |
+| :------------ | :------: | :------: | :-------------------: |
+| BERT-base     |   0.89   |   0.87   |          4.5          |
+| RoBERTa-large |   0.92   |   0.91   |          7.2          |
+| DistilBERT    |   0.86   |   0.84   |          2.1          |
+| XLNet         |   0.90   |   0.89   |          6.8          |
 
 ## Video
 
-Here's an example of embedding a video directly into your project page. This section can be used to showcase demos, recorded talks, or supplementary materials.  
+You can embed videos to showcase demos, recorded talks, or supplementary materials.  
 
 <Video
   src="Jellyfish-110877.mp4#t=0.001"
