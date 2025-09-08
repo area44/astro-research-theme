@@ -39,8 +39,6 @@ body {
 
 .base-grid,
 .n-header,
-.n-byline,
-.n-title,
 .n-article,
 .n-footer {
   display: grid;
@@ -57,8 +55,6 @@ body {
 @media (min-width: 768px) {
   .base-grid,
   .n-header,
-  .n-byline,
-  .n-title,
   .n-article,
   .n-footer {
     display: grid;
@@ -75,8 +71,6 @@ body {
 @media (min-width: 1000px) {
   .base-grid,
   .n-header,
-  .n-byline,
-  .n-title,
   .n-article,
   .n-footer {
     display: grid;
@@ -93,8 +87,6 @@ body {
 @media (min-width: 1180px) {
   .base-grid,
   .n-header,
-  .n-byline,
-  .n-title,
   .n-article,
   .n-footer {
     display: grid;
@@ -175,6 +167,7 @@ strong {
 
 /*------------------------------------------------------------------*/
 /* article */
+
 .n-article h2 {
   contain: layout style;
   font-weight: 600;

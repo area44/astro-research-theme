@@ -2,19 +2,22 @@
 import BaseHead from "@/components/BaseHead.astro";
 
 interface Props {
-  title?: string | undefined;
-  description?: string | undefined;
-  ogImage?: URL | undefined;
+  title?: string;
+  description?: string;
+  ogImage?: URL;
 }
 
 const { title, description, ogImage } = Astro.props;
 ---
 
+<!doctype html>
 <html lang="en">
   <head>
     <BaseHead title={title} description={description} ogImage={ogImage} />
   </head>
   <body>
-    <slot />
+    <div class="n-article">
+      <slot />
+    </div>
   </body>
 </html>

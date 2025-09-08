@@ -8,20 +8,16 @@ interface Props {
 const { src, name, description } = Astro.props;
 ---
 
-<div class="n-article">
-  <h2>Videos</h2>
-  <slot />
-  <div class="l-page video">
-    <video controls loop width="100%">
-      <source src={src} type="video/mp4" />
-    </video>
-    <div class="videocaption">
-      <div>
-        <strong>
-          {name}:
-        </strong>
-        {description}
-      </div>
+<div class="l-page video">
+  <video controls loop width="100%">
+    <source src={src} type="video/mp4" />
+  </video>
+  <div class="videocaption">
+    <div>
+      <strong>
+        {name}:
+      </strong>
+      {description}
     </div>
   </div>
 </div>

@@ -52,13 +52,11 @@ const { title, authors, affiliations } = Astro.props as Props;
   </div>
 </div>
 
-<div class="n-article">
-  <div class="l-article">
-    <Image src={banner} alt="Banner" />
-  </div>
-
-  <h2>Abstract</h2>
-  <p>
-    <slot />
-  </p>
+<div class="l-article">
+  <Image src={banner} alt="Banner" />
 </div>
+
+<h2>Abstract</h2>
+<p>
+  <slot />
+</p>
