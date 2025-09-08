@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@400;600;700&family=Inter:wght@400;500;600;700&display=swap");
+
 :root {
   --small-thumb-border-radius: 2px;
   --larger-thumb-border-radius: 3px;
@@ -35,6 +37,24 @@ html {
 body {
   margin: 0px;
   padding: 0px;
+}
+
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+strong {
+  font-weight: 600;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 .base-grid,
@@ -105,6 +125,7 @@ body {
 }
 
 /* default grid column assignments */
+
 .n-title > * {
   grid-column: text;
 }
@@ -133,21 +154,9 @@ body {
   grid-column: text;
 }
 
-p {
-  margin-top: 0;
-  margin-bottom: 1em;
-}
-
-.pixelated {
-  image-rendering: pixelated;
-}
-
-strong {
-  font-weight: 600;
-}
-
 /*------------------------------------------------------------------*/
 /* title */
+
 .n-title h1 {
   font-family: "Barlow", system-ui, Arial, sans-serif;
   color: #082333;
@@ -240,20 +249,6 @@ strong {
   grid-template-columns: 1fr 1fr;
 }
 
-/*------------------------------------------------------------------*/
-/* figures */
-.figure {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-figcaption,
-.figcaption {
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 12px;
-  line-height: 1.5em;
-}
-
 ul.authors {
   list-style-type: none;
   padding: 0;
@@ -282,6 +277,7 @@ ul.authors.affiliations li {
     - two columns on larger viewport sizes: side-by-side paper thumb and links
     - single column: no thumb
 */
+
 .download-section {
   display: grid;
   grid-template-areas: "links";
@@ -301,11 +297,6 @@ ul.authors.affiliations li {
   grid-area: links;
 }
 
-img {
-  width: 100%;
-  height: auto;
-}
-
 img.dropshadow {
   box-shadow: 0 1px 10px rgba(0, 0, 0, 0.3);
 }
@@ -321,19 +312,8 @@ img.dropshadow {
   }
 }
 
-/* For BibTeX */
-pre {
-  font-size: 0.9em;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  border-radius: 3px;
-  background-color: rgb(235, 235, 235);
-  overflow-x: auto;
-}
-
 /* Video caption */
+
 .video {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -361,6 +341,21 @@ pre {
 
 .hidden {
   display: none;
+}
+
+/*------------------------------------------------------------------*/
+/* figures */
+
+.figure {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+figcaption,
+.figcaption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
 }
 
 h3.figtitle {
@@ -416,7 +411,6 @@ h3.figtitle {
   border-radius: var(--larger-thumb-border-radius);
 }
 
-/*---------------------------------------------------------------------*/
 .fig-slider {
   grid-template-columns: auto 2fr;
   grid-template-rows: 1fr;
@@ -437,4 +431,43 @@ h3.figtitle {
 
 .fig-preload {
   display: none;
+}
+
+/*---------------------------------------------------------------*/
+/* tables */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #212835;
+}
+
+thead {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+thead th {
+  font-family: "Barlow", system-ui, Arial, sans-serif;
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  color: #082333;
+  font-size: 0.95rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02); /* subtle zebra striping */
+}
+
+td {
+  padding: 0.75rem 1rem;
+  vertical-align: top;
 }

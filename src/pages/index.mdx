@@ -7,16 +7,18 @@ import Header from "@/components/Header.astro";
 import Links from "@/components/Links.astro";
 import Video from "@/components/Video.astro";
 import LaTeX from "@/components/LaTeX.astro";
-
+import Footer from "@/components/Footer.astro";
 
 <Header
   title={frontmatter.title}
   authors={[
-    { id: "1", name: "Adam Allen" },
-    { id: "2", name: "Peter Fadler" },
+    { id: "1", name: "Mark Anderson" },
+    { id: "2", name: "Peter Parker" },
+    { id: "1", name: "Long Nhat Nguyen" },
   ]}
   affiliations={[
     { id: "1", name: "AREA44" },
+    { id: "1", name: "NVIDIA" },
   ]}
 >
   This is a live demo of a research project template built with **Astro**.  
@@ -42,7 +44,7 @@ import LaTeX from "@/components/LaTeX.astro";
   ]}
 />
 
-## Headings
+## Markdown
 
 Use headings to structure your content into clear, readable sections.
 
@@ -54,6 +56,15 @@ This is an example of a level-three heading.
 
 And here is a level-four heading.
 
+## Tables
+
+You can create tables using [GitHub Flavored Markdown](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables):
+
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
+| git diff     | git diff       | git diff      |
+
 ## LaTeX
 
 Mathematical notation is supported via [KaTeX](https://katex.org/), rendered at build time for fast loading.  
@@ -63,17 +74,6 @@ Inline example: <LaTeX inline formula="a^2 + b^2 = c^2" />
 Block example:
 
 <LaTeX formula="\int_a^b f(x)\, dx" />
-
-## Tables
-
-You can create tables using [GitHub Flavored Markdown](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables):
-
-| Model         | Accuracy | F1 score | Training time (hours) |
-| :------------ | :------: | :------: | :-------------------: |
-| BERT-base     |   0.89   |   0.87   |          4.5          |
-| RoBERTa-large |   0.92   |   0.91   |          7.2          |
-| DistilBERT    |   0.86   |   0.84   |          2.1          |
-| XLNet         |   0.90   |   0.89   |          6.8          |
 
 ## Video
 
@@ -110,3 +110,5 @@ You are free to reuse this material for non-commercial purposes, provided you gi
 
 We would like to thank the open-source community and contributors who inspired this template.
 Additional support, feedback, and testing were invaluable in shaping this project.
+
+<Footer/>
