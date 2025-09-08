@@ -1,19 +1,16 @@
 ---
 import "@/styles/global.css";
 
-interface Props {
+export type Props = {
   title?: string;
   description?: string;
-  ogImage?: string | URL;
-}
-
-const siteUrl = new URL(Astro.site ?? "http://localhost:3000/");
-const canonicalURL = new URL(Astro.url.pathname, siteUrl).toString();
+  ogImage?: string;
+};
 
 const {
   title = "Default Site Title",
   description = "Default description for SEO.",
-  ogImage = new URL("banner.jpg", siteUrl).toString(),
+  ogImage = new URL("banner.jpg", Astro.site).toString(),
 } = Astro.props;
 ---
 
@@ -26,19 +23,16 @@ const {
 <title>{title}</title>
 <meta name="title" content={title} />
 <meta name="description" content={description} />
-<link rel="canonical" href={canonicalURL} />
-<link rel="icon" href={`${siteUrl}favicon.svg`} type="image/svg+xml" />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:url" content={canonicalURL} />
 <meta property="og:title" content={title} />
 <meta property="og:description" content={description} />
 <meta property="og:image" content={ogImage} />
 
 <!-- Twitter -->
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:url" content={canonicalURL} />
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
