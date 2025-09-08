@@ -175,12 +175,6 @@ strong {
 
 /*------------------------------------------------------------------*/
 /* article */
-.n-article {
-  color: rgb(33, 40, 53);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding-top: 2rem;
-}
-
 .n-article h2 {
   contain: layout style;
   font-weight: 600;
@@ -212,6 +206,9 @@ strong {
   line-height: 1.8em;
   padding: 1.5rem 0;
   min-height: 1.8em;
+  color: rgb(33, 40, 53);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 .n-byline .byline {
@@ -309,6 +306,11 @@ ul.authors.affiliations li {
 
 .download-links {
   grid-area: links;
+}
+
+img {
+  width: 100%;
+  height: auto;
 }
 
 img.dropshadow {
