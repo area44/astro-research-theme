@@ -1,5 +1,5 @@
 import mdx from "@astrojs/mdx";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 const site = process.env.SITE || "localhost://4321";
 const base = process.env.BASE || "/";
@@ -8,6 +8,20 @@ export default defineConfig({
   site,
   base,
   integrations: [mdx()],
+  experimental: {
+    fonts: [
+      {
+        provider: fontProviders.google(),
+        name: "Inter",
+        cssVariable: "--font-inter",
+      },
+      {
+        provider: fontProviders.google(),
+        name: "Barlow",
+        cssVariable: "--font-barlow",
+      },
+    ],
+  },
   markdown: {
     shikiConfig: {
       themes: {

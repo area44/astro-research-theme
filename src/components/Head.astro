@@ -1,5 +1,6 @@
 ---
 import "@/styles/global.css";
+import { Font } from "astro:assets";
 
 export type Props = {
   title?: string;
@@ -36,3 +37,6 @@ const {
 <meta name="twitter:title" content={title} />
 <meta name="twitter:description" content={description} />
 <meta name="twitter:image" content={ogImage} />
+
+<Font cssVariable="--font-inter" preload />
+<Font cssVariable="--font-barlow" preload />
