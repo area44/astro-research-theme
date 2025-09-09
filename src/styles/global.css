@@ -51,11 +51,6 @@ img {
   grid-column-gap: 8px;
 }
 
-.grid {
-  display: grid;
-  grid-column-gap: 8px;
-}
-
 @media (min-width: 768px) {
   .base-grid,
   .n-header,
@@ -199,9 +194,6 @@ img {
 
 .n-byline .byline {
   grid-column: text;
-}
-
-.n-byline .byline {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
@@ -375,11 +367,6 @@ h3.figtitle {
   border-width: 1px;
   border-style: solid;
   opacity: 1;
-}
-
-.grid {
-  display: grid;
-  grid-column-gap: 8px;
 }
 
 .fig-3-image-row {
