@@ -1,0 +1,62 @@
+---
+import { Image } from "astro:assets";
+import banner from "@/assets/banner.jpg";
+
+interface Author {
+  id: number | string;
+  name: string;
+}
+
+interface Affiliation {
+  id: number | string;
+  name: string;
+}
+
+interface Props {
+  title: string;
+  authors: Author[];
+  affiliations: Affiliation[];
+  thumbnail: string;
+}
+
+const { title, authors, affiliations } = Astro.props as Props;
+---
+
+<div class="n-title">
+  <h1>{title}</h1>
+</div>
+
+<div class="n-byline">
+  <div class="byline">
+    <ul class="authors">
+      {
+        authors.map((author) => (
+          <li>
+            {author.name}
+            <sup>{author.id}</sup>
+          </li>
+        ))
+      }
+    </ul>
+
+    <ul class="authors affiliations">
+      {
+        affiliations.map((affiliation) => (
+          <li>
+            <sup>{affiliation.id}</sup>
+            {affiliation.name}
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>
+
+<div class="l-article">
+  <Image src={banner} alt="Banner" />
+</div>
+
+<h2>Abstract</h2>
+<p>
+  <slot />
+</p>

@@ -11,12 +11,14 @@
     "start": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "format": "biome format --write .",
-    "lint": "biome lint --write .",
-    "check": "biome check --write ."
+    "format": "biome format --write",
+    "lint": "biome lint --write",
+    "check": "biome check --write"
   },
   "dependencies": {
+    "@astrojs/mdx": "^4.3.4",
     "astro": "^5.13.5",
+    "katex": "^0.16.22",
     "sharp": "^0.34.3"
   },
   "devDependencies": {

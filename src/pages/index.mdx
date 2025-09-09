@@ -1,0 +1,114 @@
+---
+layout: "@/layouts/BaseLayout.astro"
+title: Astro Research Theme
+description: A minimal and elegant Astro theme for research projects.
+---
+import Header from "@/components/Header.astro";
+import Links from "@/components/Links.astro";
+import Video from "@/components/Video.astro";
+import LaTeX from "@/components/LaTeX.astro";
+import Footer from "@/components/Footer.astro";
+
+<Header
+  title={frontmatter.title}
+  authors={[
+    { id: "1", name: "Mark Anderson" },
+    { id: "2", name: "Peter Parker" },
+    { id: "1", name: "Long Nhat Nguyen" },
+  ]}
+  affiliations={[
+    { id: "1", name: "AREA44" },
+    { id: "1", name: "NVIDIA" },
+  ]}
+>
+  This is a live demo of a research project template built with **Astro**.  
+  It provides a clean, customizable framework for academic papers, projects, or presentations.  
+
+  Content is written in **MDX**, letting you combine markdown formatting — such as **bold**, *italics*, and ~strikethrough~ — with Astro components for a flexible authoring experience.
+</Header>
+
+<Links
+  links={[
+    {
+      id: "Paper PDF",
+      url: "https://raw.githubusercontent.com/area44/astro-research-theme/main/public/pdf-sample.pdf",
+    },
+    {
+      id: "Astro Banner",
+      url: "https://raw.githubusercontent.com/area44/astro-research-theme/main/public/banner.jpg",
+    },
+    {
+      id: "Code release on GitHub",
+      url: "https://github.com/area44/astro-research-theme",
+    },
+  ]}
+/>
+
+## Markdown
+
+Use headings to structure your content into clear, readable sections.
+
+### Heading 3
+
+This is an example of a level-three heading.
+
+#### Heading 4
+
+And here is a level-four heading.
+
+## Tables
+
+You can create tables using [GitHub Flavored Markdown](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables):
+
+| Left-aligned | Center-aligned | Right-aligned |
+| :---         |     :---:      |          ---: |
+| git status   | git status     | git status    |
+| git diff     | git diff       | git diff      |
+
+## LaTeX
+
+Mathematical notation is supported via [KaTeX](https://katex.org/), rendered at build time for fast loading.  
+
+Inline example: <LaTeX inline formula="a^2 + b^2 = c^2" />  
+
+Block example:
+
+<LaTeX formula="\int_a^b f(x)\, dx" />
+
+## Video
+
+You can embed videos to showcase demos, recorded talks, or supplementary materials.  
+
+<Video
+  src="Jellyfish-110877.mp4#t=0.001"
+  name="Jellyfish"
+  description="Video courtesy of Pixabay"
+/>
+
+## Citation
+
+If you use this template, please cite it as follows:
+
+```bibtex
+@article{
+  title = {Astro Research Theme},
+  author = {AREA44},
+  year = {2023},
+  month = {05},
+  day = {21},
+}
+```
+
+## License
+
+All images, text, and video files on this site are made available under the
+**Creative Commons CC BY-NC 4.0 license**.
+
+You are free to reuse this material for non-commercial purposes, provided you give appropriate credit by referencing the title and author(s) of the paper.
+
+## Acknowledgments
+
+We would like to thank the open-source community and contributors who inspired this template.
+Additional support, feedback, and testing were invaluable in shaping this project.
+
+<Footer/>

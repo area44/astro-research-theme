@@ -1,0 +1,41 @@
+---
+import { Image } from "astro:assets";
+import thumbnail from "@/assets/thumnail.jpg";
+
+interface Link {
+  id: string;
+  url: string;
+}
+
+interface Props {
+  links: Link[];
+}
+
+const { links } = Astro.props as Props;
+---
+
+<h2>Links</h2>
+<div class="grid download-section">
+  <div class="download-thumb">
+    <Image
+      src={thumbnail}
+      width="300"
+      class="dropshadow"
+      alt="Download preview"
+    />
+  </div>
+
+  <div class="download-links">
+    <ul>
+      {
+        links.map((link) => (
+          <li>
+            <a href={link.url} rel="noopener noreferrer" target="_blank">
+              {link.id}
+            </a>
+          </li>
+        ))
+      }
+    </ul>
+  </div>
+</div>

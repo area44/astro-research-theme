@@ -1,0 +1,42 @@
+---
+import "@/styles/global.css";
+import { Font } from "astro:assets";
+
+export type Props = {
+  title?: string;
+  description?: string;
+  ogImage?: string;
+};
+
+const {
+  title = "Default Site Title",
+  description = "Default description for SEO.",
+  ogImage = new URL("banner.jpg", Astro.site).toString(),
+} = Astro.props;
+---
+
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+<meta name="generator" content={Astro.generator} />
+
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+
+<!-- Open Graph -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={ogImage} />
+
+<!-- Twitter -->
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content={title} />
+<meta name="twitter:description" content={description} />
+<meta name="twitter:image" content={ogImage} />
+
+<Font cssVariable="--font-inter" preload />
+<Font cssVariable="--font-barlow" preload />

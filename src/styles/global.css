@@ -6,21 +6,7 @@
 html {
   font-size: 14px;
   line-height: 1.6;
-  font-family:
-    Inter,
-    system-ui,
-    -apple-system,
-    BlinkMacSystemFont,
-    "Segoe UI",
-    Roboto,
-    "Helvetica Neue",
-    Arial,
-    "Noto Sans",
-    sans-serif,
-    "Apple Color Emoji",
-    "Segoe UI Emoji",
-    "Segoe UI Symbol",
-    "Noto Color Emoji";
+  font-family: var(--font-inter);
   text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
@@ -37,10 +23,26 @@ body {
   padding: 0px;
 }
 
+p {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+.pixelated {
+  image-rendering: pixelated;
+}
+
+strong {
+  font-weight: 600;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
 .base-grid,
 .n-header,
-.n-byline,
-.n-title,
 .n-article,
 .n-footer {
   display: grid;
@@ -49,16 +51,9 @@ body {
   grid-column-gap: 8px;
 }
 
-.grid {
-  display: grid;
-  grid-column-gap: 8px;
-}
-
 @media (min-width: 768px) {
   .base-grid,
   .n-header,
-  .n-byline,
-  .n-title,
   .n-article,
   .n-footer {
     display: grid;
@@ -75,8 +70,6 @@ body {
 @media (min-width: 1000px) {
   .base-grid,
   .n-header,
-  .n-byline,
-  .n-title,
   .n-article,
   .n-footer {
     display: grid;
@@ -93,8 +86,6 @@ body {
 @media (min-width: 1180px) {
   .base-grid,
   .n-header,
-  .n-byline,
-  .n-title,
   .n-article,
   .n-footer {
     display: grid;
@@ -113,6 +104,7 @@ body {
 }
 
 /* default grid column assignments */
+
 .n-title > * {
   grid-column: text;
 }
@@ -141,23 +133,11 @@ body {
   grid-column: text;
 }
 
-p {
-  margin-top: 0;
-  margin-bottom: 1em;
-}
-
-.pixelated {
-  image-rendering: pixelated;
-}
-
-strong {
-  font-weight: 600;
-}
-
 /*------------------------------------------------------------------*/
 /* title */
+
 .n-title h1 {
-  font-family: "Barlow", system-ui, Arial, sans-serif;
+  font-family: var(--font-barlow);
   color: #082333;
   grid-column: text;
   font-size: 40px;
@@ -175,11 +155,6 @@ strong {
 
 /*------------------------------------------------------------------*/
 /* article */
-.n-article {
-  color: rgb(33, 40, 53);
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
-  padding-top: 2rem;
-}
 
 .n-article h2 {
   contain: layout style;
@@ -212,13 +187,13 @@ strong {
   line-height: 1.8em;
   padding: 1.5rem 0;
   min-height: 1.8em;
+  color: rgb(33, 40, 53);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 2rem;
 }
 
 .n-byline .byline {
   grid-column: text;
-}
-
-.n-byline .byline {
   grid-template-columns: 1fr 1fr 1fr 1fr;
 }
 
@@ -250,20 +225,6 @@ strong {
   grid-template-columns: 1fr 1fr;
 }
 
-/*------------------------------------------------------------------*/
-/* figures */
-.figure {
-  margin-top: 1.5rem;
-  margin-bottom: 1rem;
-}
-
-figcaption,
-.figcaption {
-  color: rgba(0, 0, 0, 0.6);
-  font-size: 12px;
-  line-height: 1.5em;
-}
-
 ul.authors {
   list-style-type: none;
   padding: 0;
@@ -292,6 +253,7 @@ ul.authors.affiliations li {
     - two columns on larger viewport sizes: side-by-side paper thumb and links
     - single column: no thumb
 */
+
 .download-section {
   display: grid;
   grid-template-areas: "links";
@@ -326,19 +288,8 @@ img.dropshadow {
   }
 }
 
-/* For BibTeX */
-pre {
-  font-size: 0.9em;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-top: 3px;
-  padding-bottom: 3px;
-  border-radius: 3px;
-  background-color: rgb(235, 235, 235);
-  overflow-x: auto;
-}
-
 /* Video caption */
+
 .video {
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -366,6 +317,21 @@ pre {
 
 .hidden {
   display: none;
+}
+
+/*------------------------------------------------------------------*/
+/* figures */
+
+.figure {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+figcaption,
+.figcaption {
+  color: rgba(0, 0, 0, 0.6);
+  font-size: 12px;
+  line-height: 1.5em;
 }
 
 h3.figtitle {
@@ -403,11 +369,6 @@ h3.figtitle {
   opacity: 1;
 }
 
-.grid {
-  display: grid;
-  grid-column-gap: 8px;
-}
-
 .fig-3-image-row {
   margin-top: 1em;
   grid-template-columns: 1fr 1.3fr 1fr;
@@ -421,7 +382,6 @@ h3.figtitle {
   border-radius: var(--larger-thumb-border-radius);
 }
 
-/*---------------------------------------------------------------------*/
 .fig-slider {
   grid-template-columns: auto 2fr;
   grid-template-rows: 1fr;
@@ -442,4 +402,43 @@ h3.figtitle {
 
 .fig-preload {
   display: none;
+}
+
+/*---------------------------------------------------------------*/
+/* tables */
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #212835;
+}
+
+thead {
+  background-color: rgba(0, 0, 0, 0.03);
+}
+
+thead th {
+  font-family: var(--font-barlow);
+  font-weight: 600;
+  text-align: left;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+  color: #082333;
+  font-size: 0.95rem;
+}
+
+tbody tr {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+tbody tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.02); /* subtle zebra striping */
+}
+
+td {
+  padding: 0.75rem 1rem;
+  vertical-align: top;
 }
