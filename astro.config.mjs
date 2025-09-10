@@ -1,4 +1,5 @@
 import mdx from "@astrojs/mdx";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
 
 const site = process.env.SITE || "localhost://4321";
@@ -29,5 +30,8 @@ export default defineConfig({
         dark: "github-dark",
       },
     },
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
 });
