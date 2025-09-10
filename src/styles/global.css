@@ -5,8 +5,6 @@
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
   --border: oklch(0.922 0 0);
-  --small-thumb-border-radius: 2px;
-  --larger-thumb-border-radius: 3px;
 }
 
 @theme {
@@ -17,7 +15,7 @@
 
 @layer base {
   html {
-    @apply text-sm leading-4 md:text-base font-sans;
+    @apply text-sm leading-6 md:text-base font-sans;
   }
 
   body {
@@ -25,7 +23,7 @@
   }
 
   h1 {
-    @apply text-[40px] font-bold leading-5 text-center mt-0 mb-2 mx-0 md:text-[50px];
+    @apply text-4xl font-bold leading-12 text-center mt-0 mb-2 mx-0 md:text-5xl;
   }
 
   h2 {
@@ -45,7 +43,7 @@
   }
 
   table {
-    @apply w-full text-base leading-4 mx-0 my-8 border-collapse;
+    @apply w-full text-base leading-6 mx-0 my-8 border-collapse;
   }
   thead {
     @apply bg-background;
@@ -64,13 +62,11 @@
   }
 }
 
-.n-article,
-.n-footer {
+.n-article {
   @apply grid justify-items-stretch grid-cols-[[screen-start]_8px_[page-start_kicker-start_text-start_gutter-start_middle-start]_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_[text-end_page-end_gutter-end_kicker-end_middle-end]_8px_[screen-end]] gap-x-2;
 }
 @media (min-width: 768px) {
-  .n-article,
-  .n-footer {
+  .n-article {
     @apply grid justify-items-stretch grid-cols-[[screen-start]_1fr_[page-start_kicker-start_middle-start_text-start]_45px_45px_45px_45px_45px_45px_45px_45px_[kicker-end_text-end_gutter-start]_45px_[middle-end]_45px_[page-end_gutter-end]_1fr_[screen-end]] gap-x-4;
   }
   .grid {
@@ -78,8 +74,7 @@
   }
 }
 @media (min-width: 1000px) {
-  .n-article,
-  .n-footer {
+  .n-article {
     @apply grid justify-items-stretch grid-cols-[[screen-start]_1fr_[page-start_kicker-start]_50px_[middle-start]_50px_[text-start_kicker-end]_50px_50px_50px_50px_50px_50px_50px_50px_[text-end_gutter-start]_50px_[middle-end]_50px_[page-end_gutter-end]_1fr_[screen-end]] gap-x-4;
   }
   .grid {
@@ -87,8 +82,7 @@
   }
 }
 @media (min-width: 1180px) {
-  .n-article,
-  .n-footer {
+  .n-article {
     @apply grid justify-items-stretch grid-cols-[[screen-start]_1fr_[page-start_kicker-start]_60px_[middle-start]_60px_[text-start_kicker-end]_60px_60px_60px_60px_60px_60px_60px_60px_[text-end_gutter-start]_60px_[middle-end]_60px_[page-end_gutter-end]_1fr_[screen-end]] gap-x-8;
   }
   .grid {
@@ -100,12 +94,6 @@
 .n-article > * {
   @apply col-[text];
 }
-.n-header {
-  @apply h-0;
-}
-.n-footer {
-  @apply h-[60px];
-}
 
 .l-page {
   @apply col-[page];
@@ -114,8 +102,6 @@
   @apply col-[text];
 }
 
-/*------------------------------------------------------------------*/
-/* byline */
 .n-byline {
   @apply overflow-hidden text-[0.8rem] leading-[1.8em] min-h-[1.8em] text-[rgb(33,40,53)] mb-8 px-0 py-6 border-y-[rgba(0,0,0,0.1)] border-t border-solid border-b;
   contain: style;
@@ -151,10 +137,6 @@ ul.authors.affiliations li {
   @apply text-[rgb(126,126,126)];
 }
 
-/* Download section columns.  This switches between two layouts::after
-    - two columns on larger viewport sizes: side-by-side paper thumb and links
-    - single column: no thumb
-*/
 .download-section {
   @apply grid;
   grid-template-areas: "links";
@@ -188,69 +170,4 @@ img.dropshadow {
 }
 .videocaption {
   @apply flex text-base leading-[1.5em] justify-center mb-4;
-}
-.disable-selection {
-  @apply select-none;
-  -moz-user-select: none;
-
-  /* Firefox */
-  -ms-user-select: none;
-
-  /* Internet Explorer */
-  -webkit-user-select: none;
-
-  /* Chrome, Safari, and Opera */
-  -webkit-touch-callout: none;
-
-  /* Disable Android and iOS callouts*/
-}
-.hidden {
-  @apply hidden;
-}
-
-/*------------------------------------------------------------------*/
-/* figures */
-.figure {
-  @apply mt-6 mb-4;
-}
-figcaption,
-.figcaption {
-  @apply text-[rgba(0,0,0,0.6)] text-xs leading-[1.5em];
-}
-h3.figtitle {
-  @apply my-0;
-}
-.fig-title-line {
-  @apply grid-cols-[2fr_0.75fr];
-}
-.fig-thumb-image-row {
-  @apply grid-cols-[1fr_1fr] grid-rows-[1fr];
-}
-.fig-thumb-image-row-item {
-  @apply w-full min-h-[auto] rounded-[var(--small-thumb-border-radius)];
-}
-.fig-dataset-button {
-  @apply border cursor-pointer opacity-60 border-[rgba(0,0,0,0)] border-solid;
-}
-.fig-dataset-button.active {
-  @apply border opacity-100 border-[rgba(0,0,0,0.7)] border-solid;
-}
-.fig-3-image-row {
-  @apply grid-cols-[1fr_1.3fr_1fr] grid-rows-[1fr] mt-[1em];
-}
-.fig-3-image-item {
-  @apply justify-self-center self-center w-full rounded-[var(--larger-thumb-border-radius)];
-}
-.fig-slider {
-  @apply grid-cols-[auto_2fr] grid-rows-[1fr] justify-center mt-[1em];
-  align-items: start;
-}
-.fig-slider img.play_button {
-  @apply cursor-pointer justify-self-center mr-2;
-}
-.fig-slider svg {
-  @apply touch-none;
-}
-.fig-preload {
-  @apply hidden;
 }
