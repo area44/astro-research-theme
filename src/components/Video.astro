@@ -8,16 +8,14 @@ interface Props {
 const { src, name, description } = Astro.props;
 ---
 
-<div class="my-6">
-  <video controls loop width="100%">
+<figure class="my-8">
+  <video controls loop class="w-full shadow-sm" aria-label={name}>
     <source src={src} type="video/mp4" />
+    Your browser does not support the video tag.
   </video>
-  <div class="flex text-base leading-8 justify-center mb-4">
-    <div>
-      <strong>
-        {name}:
-      </strong>
-      {description}
-    </div>
-  </div>
-</div>
+
+  <figcaption class="mt-3 text-center text-base leading-7 text-muted">
+    <strong>{name}:</strong>
+    {description}
+  </figcaption>
+</figure>

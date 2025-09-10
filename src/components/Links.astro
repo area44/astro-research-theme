@@ -14,29 +14,37 @@ interface Props {
 const { links } = Astro.props as Props;
 ---
 
-<h2 class="text-xl font-bold mb-4">Links</h2>
+<section>
+  <h2>Links</h2>
 
-<div class="flex flex-col lg:flex-row gap-6 items-start">
-  <div class="hidden lg:block">
-    <Image src={thumbnail} width="300" alt="Preview" class="shadow-xl" />
-  </div>
+  <div class="flex flex-col lg:flex-row gap-6 items-start">
+    <figure class="hidden lg:block">
+      <Image
+        src={thumbnail}
+        width={300}
+        alt="Preview image for links section"
+        class="shadow-xl"
+      />
+    </figure>
 
-  <div>
-    <ul class="space-y-2">
-      {
-        links.map((link) => (
-          <li>
-            <a
-              href={link.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="text-blue-600"
-            >
-              {link.id}
-            </a>
-          </li>
-        ))
-      }
-    </ul>
+    <nav aria-label="External links">
+      <ul class="space-y-2">
+        {
+          links.map((link) => (
+            <li>
+              <a
+                href={link.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-flex items-center gap-1 text-blue-600 hover:underline focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-muted"
+              >
+                {link.id}
+                <span aria-hidden="true">↗</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
   </div>
-</div>
+</section>

@@ -17,57 +17,66 @@
 
 @layer base {
   html {
-    @apply text-sm leading-6 md:text-base font-sans;
+    @apply text-sm md:text-base leading-relaxed font-sans text-foreground bg-background;
   }
 
   body {
-    @apply m-0 p-0;
+    @apply m-0 p-0 antialiased;
   }
 
   h1 {
-    @apply text-4xl font-bold leading-12 text-center mt-0 mb-2 mx-0 md:text-5xl;
+    @apply text-4xl md:text-5xl font-bold leading-tight text-center mt-0 mb-4;
   }
 
   h2 {
-    @apply font-semibold text-3xl leading-6 mt-8 mb-6 mx-0 pb-4 border-b-border border-b border-solid;
+    @apply text-3xl font-semibold leading-snug mt-10 mb-6 pb-3 border-b border-border;
   }
 
   h3 {
-    @apply font-semibold text-2xl mx-0 pb-4;
+    @apply text-2xl font-semibold mt-8 mb-4;
   }
 
   h4 {
-    @apply font-semibold text-xl mx-0 pb-4;
+    @apply text-xl font-semibold mt-6 mb-3;
   }
 
   p {
-    @apply mt-0 mb-2;
+    @apply mt-0 mb-4;
   }
 
   strong {
-    @apply font-semibold;
+    @apply font-semibold text-foreground;
   }
 
   img {
-    @apply w-full h-auto;
+    @apply w-full h-auto rounded-md;
   }
 
   table {
-    @apply w-full text-base leading-6 mx-0 my-8 border-collapse;
+    @apply w-full text-base leading-6 border-collapse my-8;
   }
+
   thead {
     @apply bg-background;
   }
+
   thead th {
-    @apply font-semibold text-left text-base px-4 py-3 border-b-1 border-b-border border-solid;
+    @apply px-4 py-3 text-left font-semibold border-b border-border;
   }
+
   tbody tr {
-    @apply border-b-border border-b border-solid;
+    @apply border-b border-border;
   }
+
   tbody tr:nth-child(even) {
-    @apply border-b-border;
+    @apply bg-muted/10;
   }
+
   td {
-    @apply align-top px-4 py-3;
+    @apply px-4 py-3 align-top;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-offset-2 ring-muted;
   }
 }

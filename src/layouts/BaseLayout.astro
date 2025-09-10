@@ -17,9 +17,22 @@ const { title, description, ogImage } = Astro.props.frontmatter;
   <head>
     <Head title={title} description={description} ogImage={ogImage} />
   </head>
-  <body class="flex justify-center items-start min-h-screen">
-    <div class="w-[210mm] h-[297mm] overflow-hiden m-2">
+  <body
+    class="min-h-screen flex justify-center items-start bg-background text-foreground antialiased"
+  >
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 px-3 py-2 rounded bg-muted text-background"
+    >
+      Skip to content
+    </a>
+
+    <main
+      id="main-content"
+      role="main"
+      class="w-full max-w-[210mm] aspect-[210/297] m-2 p-4"
+    >
       <slot />
-    </div>
+    </main>
   </body>
 </html>
