@@ -1,1 +1,17 @@
-<div class="n-footer"></div>
+---
+interface Props {
+  siteName?: string;
+  year?: number;
+}
+
+const { siteName = "My Site", year = new Date().getFullYear() } = Astro.props;
+---
+
+<footer
+  class="mt-16 border-t border-border py-6 text-center text-sm text-muted"
+>
+  <p>
+    © {year}
+    {siteName}. All rights reserved.
+  </p>
+</footer>

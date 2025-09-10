@@ -1,7 +1,7 @@
 ---
 layout: "@/layouts/BaseLayout.astro"
 title: Astro Research Theme
-description: A minimal and elegant Astro theme for research projects.
+description: A minimal, elegant Astro theme for research papers, projects, and academic websites.
 ---
 import Header from "@/components/Header.astro";
 import Links from "@/components/Links.astro";
@@ -13,18 +13,18 @@ import Footer from "@/components/Footer.astro";
   title={frontmatter.title}
   authors={[
     { id: "1", name: "Mark Anderson" },
-    { id: "2", name: "Peter Parker" },
-    { id: "1", name: "Long Nhat Nguyen" },
+    { id: "1", name: "Peter Parker" },
+    { id: "2", name: "Long Nhat Nguyen" },
   ]}
   affiliations={[
-    { id: "1", name: "AREA44" },
     { id: "1", name: "NVIDIA" },
+    { id: "2", name: "AREA44" },
   ]}
 >
-  This is a live demo of a research project template built with **Astro**.  
-  It provides a clean, customizable framework for academic papers, projects, or presentations.  
+  This is a live demo of a **research project template** built with **Astro**.  
+  It provides a clean, customizable framework for academic papers, project documentation, and presentations.  
 
-  Content is written in **MDX**, letting you combine markdown formatting — such as **bold**, *italics*, and ~strikethrough~ — with Astro components for a flexible authoring experience.
+  Content is written in **MDX**, so you can combine markdown formatting—such as **bold**, *italics*, and <del>strikethrough</del> - with Astro components for a flexible authoring experience.
 </Header>
 
 <Links
@@ -58,12 +58,12 @@ And here is a level-four heading.
 
 ## Tables
 
-You can create tables using [GitHub Flavored Markdown](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables):
+Organize structured information using [GitHub Flavored Markdown tables](https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/organizing-information-with-tables):
 
 | Left-aligned | Center-aligned | Right-aligned |
-| :---         |     :---:      |          ---: |
-| git status   | git status     | git status    |
-| git diff     | git diff       | git diff      |
+| :----------- | :------------: | ------------: |
+| git status   |  git status    |     git status |
+| git diff     |   git diff     |      git diff |
 
 ## LaTeX
 
@@ -77,7 +77,7 @@ Block example:
 
 ## Video
 
-You can embed videos to showcase demos, recorded talks, or supplementary materials.  
+Embed videos to showcase demos, recorded talks, or supplementary materials:  
 
 <Video
   src="Jellyfish-110877.mp4#t=0.001"
@@ -104,11 +104,11 @@ If you use this template, please cite it as follows:
 All images, text, and video files on this site are made available under the
 **Creative Commons CC BY-NC 4.0 license**.
 
-You are free to reuse this material for non-commercial purposes, provided you give appropriate credit by referencing the title and author(s) of the paper.
+You are free to reuse this material for non-commercial purposes, provided you give appropriate credit by referencing the title and author(s).
 
 ## Acknowledgments
 
 We would like to thank the open-source community and contributors who inspired this template.
 Additional support, feedback, and testing were invaluable in shaping this project.
 
-<Footer/>
+<Footer siteName="Astro Research Theme"/>

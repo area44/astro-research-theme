@@ -1,4 +1,5 @@
 import mdx from "@astrojs/mdx";
+import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
 
 const site = process.env.SITE || "localhost://4321";
@@ -15,11 +16,6 @@ export default defineConfig({
         name: "Inter",
         cssVariable: "--font-inter",
       },
-      {
-        provider: fontProviders.google(),
-        name: "Barlow",
-        cssVariable: "--font-barlow",
-      },
     ],
   },
   markdown: {
@@ -29,5 +25,8 @@ export default defineConfig({
         dark: "github-dark",
       },
     },
+  },
+  vite: {
+    plugins: [tailwindcss()],
   },
 });

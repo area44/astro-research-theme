@@ -1,6 +1,6 @@
 ---
 import { Image } from "astro:assets";
-import banner from "@/assets/banner.jpg";
+import defaultBanner from "@/assets/banner.jpg";
 
 interface Author {
   id: number | string;
@@ -16,47 +16,57 @@ interface Props {
   title: string;
   authors: Author[];
   affiliations: Affiliation[];
-  thumbnail: string;
 }
 
 const { title, authors, affiliations } = Astro.props as Props;
 ---
 
-<div class="n-title">
+<header class="pt-16">
   <h1>{title}</h1>
-</div>
 
-<div class="n-byline">
-  <div class="byline">
-    <ul class="authors">
+  <section
+    class="overflow-hidden text-sm leading-6 text-muted mb-8 border-y w-screen border-border py-4 -mx-[calc((100vw-100%)/2)]"
+    aria-labelledby="authors-label affiliations-label"
+  >
+    <address class="not-italic">
+      <h2 id="authors-label" class="sr-only">Authors</h2>
+      <ul
+        class="list-none text-black/80 text-center m-0 p-0 flex flex-wrap justify-center gap-x-4"
+      >
+        {
+          authors.map((author) => (
+            <li class="inline-block">
+              {author.name}
+              <sup class="ml-0.5">{author.id}</sup>
+            </li>
+          ))
+        }
+      </ul>
+    </address>
+
+    <h2 id="affiliations-label" class="sr-only">Affiliations</h2>
+    <ul
+      class="list-none text-center m-0 p-0 mt-2 flex flex-wrap justify-center gap-x-4"
+    >
       {
-        authors.map((author) => (
-          <li>
-            {author.name}
-            <sup>{author.id}</sup>
+        affiliations.map((aff) => (
+          <li class="inline-block">
+            <sup class="mr-0.5">{aff.id}</sup>
+            {aff.name}
           </li>
         ))
       }
     </ul>
+  </section>
 
-    <ul class="authors affiliations">
-      {
-        affiliations.map((affiliation) => (
-          <li>
-            <sup>{affiliation.id}</sup>
-            {affiliation.name}
-          </li>
-        ))
-      }
-    </ul>
-  </div>
-</div>
+  <figure class="mb-8">
+    <Image src={defaultBanner} alt="Project banner" />
+  </figure>
 
-<div class="l-article">
-  <Image src={banner} alt="Banner" />
-</div>
-
-<h2>Abstract</h2>
-<p>
-  <slot />
-</p>
+  <section>
+    <h2>Abstract</h2>
+    <p>
+      <slot />
+    </p>
+  </section>
+</header>
