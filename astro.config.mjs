@@ -16,11 +16,6 @@ export default defineConfig({
         name: "Inter",
         cssVariable: "--font-inter",
       },
-      {
-        provider: fontProviders.google(),
-        name: "Barlow",
-        cssVariable: "--font-barlow",
-      },
     ],
   },
   markdown: {
