@@ -14,9 +14,9 @@ interface Props {
 const { links } = Astro.props as Props;
 ---
 
-<h2>Links</h2>
+<h2 class="text-xl font-bold mb-4">Links</h2>
 
-<div class="grid grid-cols-1 lg:grid-cols-[300px_1fr] gap-6 items-start">
+<div class="flex flex-col lg:flex-row gap-6 items-start">
   <div class="hidden lg:block">
     <Image src={thumbnail} width="300" alt="Preview" class="shadow-xl" />
   </div>
@@ -30,7 +30,7 @@ const { links } = Astro.props as Props;
               href={link.url}
               target="_blank"
               rel="noopener noreferrer"
-              class="text-blue-600 hover:underline"
+              class="text-blue-600"
             >
               {link.id}
             </a>
