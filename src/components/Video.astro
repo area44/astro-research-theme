@@ -8,11 +8,11 @@ interface Props {
 const { src, name, description } = Astro.props;
 ---
 
-<div class="l-page video">
+<div class="my-6">
   <video controls loop width="100%">
     <source src={src} type="video/mp4" />
   </video>
-  <div class="videocaption">
+  <div class="flex text-base leading-8 justify-center mb-4">
     <div>
       <strong>
         {name}:

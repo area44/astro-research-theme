@@ -26,35 +26,33 @@ const { title, authors, affiliations } = Astro.props as Props;
   <h1>{title}</h1>
 </div>
 
-<div class="n-byline">
-  <div class="byline">
-    <ul class="authors">
-      {
-        authors.map((author) => (
-          <li>
-            {author.name}
-            <sup>{author.id}</sup>
-          </li>
-        ))
-      }
-    </ul>
+<div
+  class="overflow-hidden text-[0.8rem] leading-6 text-mute mb-8 px-0 py-6 border-y-border border-t border-solid border-b"
+>
+  <ul class="list-none text-center m-0 p-0">
+    {
+      authors.map((author) => (
+        <li class="inline-block px-2 py-0">
+          {author.name}
+          <sup>{author.id}</sup>
+        </li>
+      ))
+    }
+  </ul>
 
-    <ul class="authors affiliations">
-      {
-        affiliations.map((affiliation) => (
-          <li>
-            <sup>{affiliation.id}</sup>
-            {affiliation.name}
-          </li>
-        ))
-      }
-    </ul>
-  </div>
+  <ul class="list-none text-center m-0 p-0 mt-2">
+    {
+      affiliations.map((affiliation) => (
+        <li class="inline-block">
+          <sup>{affiliation.id}</sup>
+          {affiliation.name}
+        </li>
+      ))
+    }
+  </ul>
 </div>
 
-<div class="l-article">
-  <Image src={banner} alt="Banner" />
-</div>
+<Image src={banner} alt="Banner" />
 
 <h2>Abstract</h2>
 <p>
