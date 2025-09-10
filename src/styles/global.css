@@ -26,6 +26,26 @@
   img {
     @apply w-full h-auto;
   }
+
+  table {
+    @apply w-full text-[0.9rem] leading-[1.6] text-[#212835] mx-0 my-8 border-collapse;
+  }
+  thead {
+    @apply bg-[rgba(0,0,0,0.03)];
+  }
+  thead th {
+    @apply font-semibold text-left text-[#082333] text-[0.95rem] px-4 py-3 border-b-2 border-b-[rgba(0,0,0,0.1)] border-solid;
+    font-family: var(--font-barlow);
+  }
+  tbody tr {
+    @apply border-b-[rgba(0,0,0,0.08)] border-b border-solid;
+  }
+  tbody tr:nth-child(even) {
+    @apply bg-[rgba(0,0,0,0.02)];
+  }
+  td {
+    @apply align-top px-4 py-3;
+  }
 }
 
 .pixelated {
@@ -256,28 +276,4 @@ h3.figtitle {
 }
 .fig-preload {
   @apply hidden;
-}
-
-/*---------------------------------------------------------------*/
-/* tables */
-table {
-  @apply w-full text-[0.9rem] leading-[1.6] text-[#212835] mx-0 my-8 border-collapse;
-}
-thead {
-  @apply bg-[rgba(0,0,0,0.03)];
-}
-thead th {
-  @apply font-semibold text-left text-[#082333] text-[0.95rem] px-4 py-3 border-b-2 border-b-[rgba(0,0,0,0.1)] border-solid;
-  font-family: var(--font-barlow);
-}
-tbody tr {
-  @apply border-b-[rgba(0,0,0,0.08)] border-b border-solid;
-}
-tbody tr:nth-child(even) {
-  @apply bg-[rgba(0,0,0,0.02)];
-
-  /* subtle zebra striping */
-}
-td {
-  @apply align-top px-4 py-3;
 }
