@@ -56,10 +56,6 @@
   }
 }
 
-.pixelated {
-  image-rendering: pixelated;
-}
-
 .n-header,
 .n-article,
 .n-footer {
