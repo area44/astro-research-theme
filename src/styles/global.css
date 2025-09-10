@@ -24,6 +24,14 @@
     @apply m-0 p-0;
   }
 
+  h1 {
+    @apply text-[40px] font-bold leading-5 text-center mt-0 mb-2 mx-0 md:text-[50px];
+  }
+
+  h2 {
+    @apply font-semibold text-2xl leading-6 mt-8 mb-6 mx-0 pb-4 border-b-border border-b border-solid md:text-4xl;
+  }
+
   p {
     @apply mt-0 mb-2;
   }
@@ -56,13 +64,11 @@
   }
 }
 
-.n-header,
 .n-article,
 .n-footer {
   @apply grid justify-items-stretch grid-cols-[[screen-start]_8px_[page-start_kicker-start_text-start_gutter-start_middle-start]_1fr_1fr_1fr_1fr_1fr_1fr_1fr_1fr_[text-end_page-end_gutter-end_kicker-end_middle-end]_8px_[screen-end]] gap-x-2;
 }
 @media (min-width: 768px) {
-  .n-header,
   .n-article,
   .n-footer {
     @apply grid justify-items-stretch grid-cols-[[screen-start]_1fr_[page-start_kicker-start_middle-start_text-start]_45px_45px_45px_45px_45px_45px_45px_45px_[kicker-end_text-end_gutter-start]_45px_[middle-end]_45px_[page-end_gutter-end]_1fr_[screen-end]] gap-x-4;
@@ -72,7 +78,6 @@
   }
 }
 @media (min-width: 1000px) {
-  .n-header,
   .n-article,
   .n-footer {
     @apply grid justify-items-stretch grid-cols-[[screen-start]_1fr_[page-start_kicker-start]_50px_[middle-start]_50px_[text-start_kicker-end]_50px_50px_50px_50px_50px_50px_50px_50px_[text-end_gutter-start]_50px_[middle-end]_50px_[page-end_gutter-end]_1fr_[screen-end]] gap-x-4;
@@ -82,7 +87,6 @@
   }
 }
 @media (min-width: 1180px) {
-  .n-header,
   .n-article,
   .n-footer {
     @apply grid justify-items-stretch grid-cols-[[screen-start]_1fr_[page-start_kicker-start]_60px_[middle-start]_60px_[text-start_kicker-end]_60px_60px_60px_60px_60px_60px_60px_60px_[text-end_gutter-start]_60px_[middle-end]_60px_[page-end_gutter-end]_1fr_[screen-end]] gap-x-8;
@@ -91,14 +95,8 @@
     @apply gap-x-8;
   }
 }
-.base-grid {
-  @apply col-[screen];
-}
 
 /* default grid column assignments */
-.n-title > * {
-  @apply col-[text];
-}
 .n-article > * {
   @apply col-[text];
 }
@@ -108,32 +106,12 @@
 .n-footer {
   @apply h-[60px];
 }
-.n-title {
-  @apply pt-16 pb-6 px-0;
-}
+
 .l-page {
   @apply col-[page];
 }
 .l-article {
   @apply col-[text];
-}
-
-/*------------------------------------------------------------------*/
-/* title */
-.n-title h1 {
-  @apply text-[#082333] col-[text] text-[40px] font-bold leading-[1.1em] text-center mt-0 mb-2 mx-0 md:text-[50px];
-}
-
-/*------------------------------------------------------------------*/
-/* article */
-.n-article h2 {
-  @apply font-semibold text-2xl leading-[1.25em] mt-8 mb-6 mx-0 pb-4 border-b-[rgba(0,0,0,0.1)] border-b border-solid md:text-4xl;
-  contain: layout style;
-}
-@media (min-width: 768px) {
-  .n-article {
-    @apply leading-[1.7];
-  }
 }
 
 /*------------------------------------------------------------------*/
