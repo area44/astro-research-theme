@@ -25,13 +25,13 @@ const { title, authors, affiliations } = Astro.props as Props;
   <h1>{title}</h1>
 
   <section
-    class="overflow-hidden text-sm leading-6 text-muted mb-8 border-y border-border py-4"
+    class="overflow-hidden text-sm leading-6 text-muted mb-8 border-y w-screen border-border py-4 -mx-[calc((100vw-100%)/2)]"
     aria-labelledby="authors-label affiliations-label"
   >
     <address class="not-italic">
       <h2 id="authors-label" class="sr-only">Authors</h2>
       <ul
-        class="list-none text-center m-0 p-0 flex flex-wrap justify-center gap-x-4"
+        class="list-none text-black/80 text-center m-0 p-0 flex flex-wrap justify-center gap-x-4"
       >
         {
           authors.map((author) => (
