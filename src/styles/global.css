@@ -104,30 +104,3 @@
 .n-article > * {
   @apply col-[text];
 }
-
-.download-section {
-  @apply grid;
-  grid-template-areas: "links";
-}
-.download-section h4 {
-  @apply block ml-10;
-}
-.download-thumb {
-  @apply hidden;
-  grid-area: thumb;
-}
-.download-links {
-  grid-area: links;
-}
-img.dropshadow {
-  @apply shadow-[0_1px_10px_rgba(0,0,0,0.3)];
-}
-@media (min-width: 1180px) {
-  .download-section {
-    @apply grid;
-    grid-template-areas: "thumb links";
-  }
-  .download-thumb {
-    @apply block;
-  }
-}
