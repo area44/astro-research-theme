@@ -16,15 +16,15 @@
     "check": "biome check --write"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.4",
+    "@astrojs/mdx": "^4.3.5",
     "@tailwindcss/vite": "^4.1.13",
-    "astro": "^5.13.5",
+    "astro": "^5.13.7",
     "katex": "^0.16.22",
     "sharp": "^0.34.3",
     "tailwindcss": "^4.1.13"
   },
   "devDependencies": {
     "@area44/biome-config": "^2.2.5",
-    "@biomejs/biome": "^2.2.3"
+    "@biomejs/biome": "^2.2.4"
   }
 }
