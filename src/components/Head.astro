@@ -8,10 +8,12 @@ export type Props = {
   ogImage?: string;
 };
 
+const canonicalURL = new URL(Astro.url, Astro.site);
+
 const {
   title = "Default Site Title",
   description = "Default description for SEO.",
-  ogImage = new URL("og-image.jpg", Astro.site).toString(),
+  ogImage = new URL("og-image.jpg", canonicalURL).toString(),
 } = Astro.props;
 ---
 
@@ -22,9 +24,9 @@ const {
 <meta name="generator" content={Astro.generator} />
 
 <title>{title}</title>
-<meta name="title" content={title} />
 <meta name="description" content={description} />
 <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+<link rel="canonical" href={canonicalURL.toString()} />
 
 <!-- Open Graph -->
 <meta property="og:type" content="website" />
