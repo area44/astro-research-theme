@@ -16,9 +16,9 @@
     "check": "biome check --write"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.5",
+    "@astrojs/mdx": "^4.3.6",
     "@tailwindcss/vite": "^4.1.13",
-    "astro": "^5.13.9",
+    "astro": "^5.14.1",
     "katex": "^0.16.22",
     "sharp": "^0.34.4",
     "tailwindcss": "^4.1.13"
