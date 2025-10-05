@@ -17,14 +17,14 @@
   },
   "dependencies": {
     "@astrojs/mdx": "^4.3.6",
-    "@tailwindcss/vite": "^4.1.13",
+    "@tailwindcss/vite": "^4.1.14",
     "astro": "^5.14.1",
-    "katex": "^0.16.22",
+    "katex": "^0.16.23",
     "sharp": "^0.34.4",
-    "tailwindcss": "^4.1.13"
+    "tailwindcss": "^4.1.14"
   },
   "devDependencies": {
     "@area44/biome-config": "^2.2.6",
-    "@biomejs/biome": "^2.2.4"
+    "@biomejs/biome": "^2.2.5"
   }
 }
