@@ -2,8 +2,8 @@ import mdx from "@astrojs/mdx";
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig, fontProviders } from "astro/config";
 
-const site = process.env.site || "http://localhost:4321";
-const base = process.env.base || "/";
+const site = process.env.SITE || "http://localhost:4321";
+const base = process.env.BASE || "/";
 
 export default defineConfig({
   site,
