@@ -18,8 +18,8 @@ importers:
         specifier: ^5.16.4
         version: 5.16.4(@types/node@24.10.1)(jiti@2.6.1)(lightningcss@1.30.2)(rollup@4.53.3)(typescript@5.5.4)
       katex:
-        specifier: ^0.16.25
-        version: 0.16.25
+        specifier: ^0.16.26
+        version: 0.16.26
       sharp:
         specifier: ^0.34.5
         version: 0.34.5
@@ -1160,8 +1160,8 @@ packages:
     resolution: {integrity: sha512-qQKT4zQxXl8lLwBtHMWwaTcGfFOZviOJet3Oy/xmGk2gZH677CJM9EvtfdSkgWcATZhj/55JZ0rmy3myCT5lsA==}
     hasBin: true
 
-  katex@0.16.25:
-    resolution: {integrity: sha512-woHRUZ/iF23GBP1dkDQMh1QBad9dmr8/PAwNA54VrSOVYgI12MAcE14TqnDdQOdzyEonGzMepYnqBMYdsoAr8Q==}
+  katex@0.16.26:
+    resolution: {integrity: sha512-LvYwQDwfcFB3rCkxwzqVFxhIB21x1JivrWAs3HT9NsmtgvQrcVCZ6xihnNwXwiQ8UhqRtDJRmwrRz5EgzQ2DuA==}
     hasBin: true
 
   kleur@3.0.3:
@@ -3105,7 +3105,7 @@ snapshots:
     dependencies:
       argparse: 2.0.1
 
-  katex@0.16.25:
+  katex@0.16.26:
     dependencies:
       commander: 8.3.0
 
