@@ -1,43 +1,45 @@
 ---
 import "@/styles/global.css";
+
 import { Font } from "astro:assets";
 
-export type Props = {
+interface Props {
   title?: string;
   description?: string;
-  ogImage?: string;
-};
+  ogImage?: URL;
+}
 
-const canonicalURL = new URL(Astro.url, Astro.site);
+const { title, description, ogImage } = Astro.props;
 
-const {
-  title = "Default Site Title",
-  description = "Default description for SEO.",
-  ogImage = new URL("og-image.jpg", canonicalURL).toString(),
-} = Astro.props;
+const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
+const siteTitle = title ?? "Default Site Title";
+const siteDescription = description ?? "Default description for your website.";
+const siteOgImage = ogImage ?? new URL("og-image.png", canonicalURL);
+const faviconURL = new URL("favicon.svg", canonicalURL).toString();
 ---
 
 <meta charset="utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="robots" content="index, follow" />
 <meta name="googlebot" content="index, follow" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content={Astro.generator} />
+<link rel="canonical" href={canonicalURL} />
+<link rel="shortcut icon" type="image/svg+xml" href={faviconURL} />
 
-<title>{title}</title>
-<meta name="description" content={description} />
-<link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-<link rel="canonical" href={canonicalURL.toString()} />
+<title>{siteTitle}</title>
+<meta name="title" content={siteTitle} />
+<meta name="description" content={siteDescription} />
 
-<!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={ogImage} />
+<meta property="og:url" content={canonicalURL} />
+<meta property="og:title" content={siteTitle} />
+<meta property="og:description" content={siteDescription} />
+<meta property="og:image" content={siteOgImage.toString()} />
 
-<!-- Twitter -->
-<meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content={title} />
-<meta name="twitter:description" content={description} />
-<meta name="twitter:image" content={ogImage} />
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={canonicalURL} />
+<meta property="twitter:title" content={siteTitle} />
+<meta property="twitter:description" content={siteDescription} />
+<meta property="twitter:image" content={siteOgImage.toString()} />
 
 <Font cssVariable="--font-inter" preload />
