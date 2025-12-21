@@ -14,7 +14,7 @@ const { title, description, ogImage } = Astro.props;
 const canonicalURL = new URL(Astro.url.pathname, Astro.site).toString();
 const siteTitle = title ?? "Default Site Title";
 const siteDescription = description ?? "Default description for your website.";
-const siteOgImage = ogImage ?? new URL("og-image.png", canonicalURL);
+const siteOgImage = ogImage ?? new URL("og-image.jpg", canonicalURL);
 const faviconURL = new URL("favicon.svg", canonicalURL).toString();
 ---
 
