@@ -19,7 +19,7 @@
     "@astrojs/mdx": "^4.3.13",
     "@tailwindcss/vite": "^4.2.1",
     "astro": "^5.18.0",
-    "katex": "^0.16.37",
+    "katex": "^0.16.38",
     "sharp": "^0.34.5",
     "tailwindcss": "^4.2.1"
   },
