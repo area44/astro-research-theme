@@ -9,15 +9,13 @@ export default defineConfig({
   site,
   base,
   integrations: [mdx()],
-  experimental: {
-    fonts: [
-      {
-        provider: fontProviders.google(),
-        name: "Inter",
-        cssVariable: "--font-inter",
-      },
-    ],
-  },
+  fonts: [
+    {
+      provider: fontProviders.google(),
+      name: "Inter",
+      cssVariable: "--font-inter",
+    },
+  ],
   markdown: {
     shikiConfig: {
       themes: {
