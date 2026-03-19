@@ -38,7 +38,7 @@ const { links } = Astro.props as Props;
                 rel="noopener noreferrer"
                 class="inline-flex items-center gap-1 text-blue-600 hover:underline focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-muted"
               >
-                {link.id}
+                {link.id}<span class="sr-only"> (opens in a new tab)</span>
                 <span aria-hidden="true">↗</span>
               </a>
             </li>
